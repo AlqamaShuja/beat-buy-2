@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 function Home() {
   return (
     <div data-bs-spy="scroll" data-bs-offset="70">
-     < Navbar/>
+     <Navbar/>
      <Hero/>
      <Featured/>
      <Upcoming/>
