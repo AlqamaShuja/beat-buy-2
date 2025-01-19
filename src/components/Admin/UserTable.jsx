@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FaEdit, FaTrash } from 'react-icons/fa';
-import { fetchUsers, addUser, updateUser, deleteUser, getUserFromSlice } from '../../slices/userSlice';
+import { fetchUsers, addUser, updateUser, deleteUser, getUserFromSlice, addUserThunk, adminLoginThunk } from '../../slices/userSlice';
 import { Modal, Button, Form } from 'react-bootstrap';
+import bgImage from '../../assets/bg-details.jpg';
 
 function UserTable() {
     const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function UserTable() {
             .unwrap()
             .then(() => setLoading(false))
             .catch(() => setLoading(false));
-    }, [dispatch]);
+    }, []);
 
     // Handle modal toggle
     const handleModalToggle = (user = null) => {
@@ -54,11 +55,13 @@ function UserTable() {
             // .then(() => setShowModal(false));
         } else {
             // Add user
-            dispatch(addUser(formData))
-            // .unwrap()
-            // .then(() => setShowModal(false));
+            dispatch(addUserThunk({ ...formData, username: formData.email }))
+            .unwrap()
+            .then((res) => {
+                // setShowModal(false);
+                console.log(res, "asjcnjaacbacba");
+            });
         }
-        setShowModal(false);
     };
 
     // Confirm delete user
@@ -71,10 +74,32 @@ function UserTable() {
         }
     };
 
+    const handleLoginAdmin = () => {
+        dispatch(adminLoginThunk({ username: 'superadmin@gmail.com', password: '12345678', })).unwrap()
+        .then(res => {
+            console.log(res, "scajncja:res:login");
+        })
+        .catch(error => {
+            console.log(error, "scajncja:error:login");
+        })
+    }
+
     return (
-        <div className="sub_banner_area" id="home" style={{ padding: '20px' }}>
+        <div className="sub_banner_area"
+        id="home"
+        style={{
+          padding: '20px',
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          color: '#fff',
+          minHeight: '100vh',
+        }}>
             <div className="d-flex justify-content-between align-items-center mb-4">
                 <h2 style={{ color: '#FFF' }}>User List</h2>
+                {/* <Button variant="primary" onClick={() => handleLoginAdmin()} className="text-uppercase">
+                    Login
+                </Button> */}
                 <Button variant="primary" onClick={() => handleModalToggle()} className="text-uppercase">
                     Add User
                 </Button>
@@ -192,82 +217,3 @@ function UserTable() {
 }
 
 export default UserTable;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useEffect, useState } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { FaEdit, FaTrash } from 'react-icons/fa';
-// import { fetchUsers, getUserFromSlice } from '../../slices/userSlice';
-
-// function UserTable() {
-//     const dispatch = useDispatch();
-//     const { usersList } = useSelector(getUserFromSlice);
-//     const [loading, setLoading] = useState(false);
-
-//     useEffect(() => {
-//         setLoading(true);
-//         dispatch(fetchUsers()).unwrap().then(res => {
-//             console.log(res, 'sacascmascsacsa');
-//             setLoading(false);
-//         }).catch(err => {
-//             console.log(err, 'Error:sacascmascsacsa');
-//             setLoading(false);
-//         });
-//     }, []);
-
-//     return (
-//         <div className="sub_banner_area" id="home" style={{ padding: '20px' }}>
-//             {loading ? <p className="text-center">Loading...</p>
-//             : (
-//                 <table className="table table-striped">
-//                     <thead style={{ backgroundColor: '#1d074f', color: '#fff' }}>
-//                         <tr>
-//                             <th>#</th>
-//                             <th>Name</th>
-//                             <th>Email</th>
-//                             <th>Action</th>
-//                         </tr>
-//                     </thead>
-//                     <tbody>
-//                         {usersList?.map((user, index) => (
-//                             <tr key={user.id}>
-//                                 <td style={{ color: 'white' }}>{index + 1}</td>
-//                                 <td style={{ color: 'white' }}>{user.name}</td>
-//                                 <td style={{ color: 'white' }}>{user.email}</td>
-//                                 <td>
-//                                     <button className="btn btn-sm btn-primary me-2">
-//                                         <FaEdit />
-//                                     </button>
-//                                     <button className="btn btn-sm btn-danger">
-//                                         <FaTrash />
-//                                     </button>
-//                                 </td>
-//                             </tr>
-//                         ))}
-//                     </tbody>
-//                 </table>
-//             )}
-//         </div>
-//     );
-// }
-
-// export default UserTable;

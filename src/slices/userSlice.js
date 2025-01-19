@@ -2,19 +2,60 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 // import Axios from '../utils/AxiosConfig';
 import axios from 'axios';
 
+const yourAuthToken = '';
+
 const initialState = {
     usersList: [],
 };
 
-export const fetchUsers = createAsyncThunk(
-    'users/fetchUsers', 
-    async () => {
-        const API_URL = 'https://jsonplaceholder.typicode.com/users';
-        const response = await axios.get(API_URL);
+
+export const fetchUsers = createAsyncThunk('users/fetchUsers', async (_, { rejectWithValue }) => {
+    try {
+        const response = await axios.get('https://api.bam.fan/account/v1/user', {
+            headers: {
+              Authorization: `Bearer ${yourAuthToken}`
+            }
+          });
         return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
     }
+});
+
+
+export const addUserThunk = createAsyncThunk('users/addUserThunk', async (userData, { rejectWithValue }) => {
+    try {
+        const response = await axios.post('https://api.bam.fan/account/v1/user', userData, {
+            headers: {
+              'Content-Type': 'application/json',
+            //   Authorization: `Bearer ${yourAuthToken}`
+            }
+        });
+
+        console.log(response.data, "askcascnsajcnsajnn:userr");
+        return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+});
+
+export const adminLoginThunk = createAsyncThunk(
+  'admin/login',
+  async (adminCredentials, { rejectWithValue }) => {
+    try {
+      const response = await axios.post('https://api.bam.fan/account/v1/auth/login', adminCredentials);
+
+      return response.data;
+    } catch (error) {
+      if (error.response && error.response.data) {
+        return rejectWithValue(error.response.data);
+      }
+      return rejectWithValue(error.message);
+    }
+  }
 );
 
+  
 
 const userSlice = createSlice({
     name: 'user',
@@ -41,10 +82,10 @@ const userSlice = createSlice({
           },
     },
     extraReducers: (builder) => {
-        builder
-            .addCase(fetchUsers.fulfilled, (state, action) => {
-                state.usersList = action.payload;
-            })
+        // builder
+        //     .addCase(fetchUsers.fulfilled, (state, action) => {
+        //         state.usersList = action.payload;
+        //     })
     },
 });
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, Form, Table } from 'react-bootstrap';
 import { FaEdit, FaTrash } from 'react-icons/fa';
-import bgImage from '../../assets/bg-details.jpg'; // Adjust path as needed
+import bgImage from '../../assets/bg-details.jpg';
 
 function EventType() {
   const [eventTypes, setEventTypes] = useState([
