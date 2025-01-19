@@ -28,7 +28,23 @@ export const addUserThunk = createAsyncThunk('users/addUserThunk', async (userDa
         const response = await axios.post('https://api.bam.fan/account/v1/user', userData, {
             headers: {
               'Content-Type': 'application/json',
-            //   Authorization: `Bearer ${yourAuthToken}`
+              Authorization: `Bearer ${yourAuthToken}`
+            }
+        });
+
+        console.log(response.data, "askcascnsajcnsajnn:userr");
+        return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+});
+
+export const addUserInviteThunk = createAsyncThunk('users/addUserThunk', async (userData, { rejectWithValue }) => {
+    try {
+        const response = await axios.post('https://api.bam.fan/account/v1/user/invite', userData, {
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${yourAuthToken}`
             }
         });
 

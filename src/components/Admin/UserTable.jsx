@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FaEdit, FaTrash } from 'react-icons/fa';
-import { fetchUsers, addUser, updateUser, deleteUser, getUserFromSlice, addUserThunk, adminLoginThunk } from '../../slices/userSlice';
+import { fetchUsers, addUser, updateUser, deleteUser, getUserFromSlice, addUserThunk, adminLoginThunk, addUserInviteThunk } from '../../slices/userSlice';
 import { Modal, Button, Form } from 'react-bootstrap';
 import bgImage from '../../assets/bg-details.jpg';
 
@@ -12,7 +12,7 @@ function UserTable() {
     const [showModal, setShowModal] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
     const [selectedUser, setSelectedUser] = useState(null);
-    const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+    const [formData, setFormData] = useState({ name: '', email: '', password: '', organization_name: '', });
 
     // Fetch users on mount
     useEffect(() => {
@@ -55,12 +55,12 @@ function UserTable() {
             // .then(() => setShowModal(false));
         } else {
             // Add user
-            dispatch(addUserThunk({ ...formData, username: formData.email }))
-            .unwrap()
-            .then((res) => {
-                // setShowModal(false);
-                console.log(res, "asjcnjaacbacba");
-            });
+            dispatch(addUserInviteThunk({ ...formData, username: formData.email }))
+                .unwrap()
+                .then((res) => {
+                    // setShowModal(false);
+                    console.log(res, "asjcnjaacbacba");
+                });
         }
     };
 
@@ -68,33 +68,33 @@ function UserTable() {
     const handleDelete = () => {
         if (selectedUser) {
             dispatch(deleteUser(selectedUser.id))
-                // .unwrap()
-                // .then(() => setShowDeleteModal(false));
+            // .unwrap()
+            // .then(() => setShowDeleteModal(false));
             setShowDeleteModal(false);
         }
     };
 
     const handleLoginAdmin = () => {
         dispatch(adminLoginThunk({ username: 'superadmin@gmail.com', password: '12345678', })).unwrap()
-        .then(res => {
-            console.log(res, "scajncja:res:login");
-        })
-        .catch(error => {
-            console.log(error, "scajncja:error:login");
-        })
+            .then(res => {
+                console.log(res, "scajncja:res:login");
+            })
+            .catch(error => {
+                console.log(error, "scajncja:error:login");
+            })
     }
 
     return (
         <div className="sub_banner_area"
-        id="home"
-        style={{
-          padding: '20px',
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          color: '#fff',
-          minHeight: '100vh',
-        }}>
+            id="home"
+            style={{
+                padding: '20px',
+                backgroundImage: `url(${bgImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                color: '#fff',
+                minHeight: '100vh',
+            }}>
             <div className="d-flex justify-content-between align-items-center mb-4">
                 <h2 style={{ color: '#FFF' }}>User List</h2>
                 {/* <Button variant="primary" onClick={() => handleLoginAdmin()} className="text-uppercase">
@@ -185,6 +185,16 @@ function UserTable() {
                                 />
                             </Form.Group>
                         )}
+                        <Form.Group className="mb-3">
+                            <Form.Label>Organization Name</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="organization_name"
+                                value={formData.organization_name}
+                                onChange={handleInputChange}
+                                placeholder="Enter organization name"
+                            />
+                        </Form.Group>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
