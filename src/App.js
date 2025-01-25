@@ -10,6 +10,7 @@ import { getUserFromSlice } from "./slices/userSlice";
 import User from "./pages/admin/User";
 import Event from "./pages/admin/Event";
 import EventType from "./components/Admin/EventType";
+import EventDetails from "./components/EventDetails";
 function App() {
   const { isLogin, user } = useSelector(getUserFromSlice)
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/purchase" element={<Purchase/>} />
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/featured" element={<Featured/>}/>
+        <Route path="/event/:id" element={<EventDetails />} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/admin" element={<User />}/>
         <Route path="/admin/user" element={<User />}/>
