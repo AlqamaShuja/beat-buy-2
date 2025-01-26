@@ -15,6 +15,7 @@ import TicketDetails from "./components/TicketDetails";
 import PurchaseHistory from "./components/PurchaseHistory";
 import Profile from "./pages/Profile";
 import UserHolder from "./pages/UserHolder";
+import ForgotPassword from "./pages/ForgotPassword";
 function App() {
   const { isLogin, user } = useSelector(getUserFromSlice)
   return (
@@ -30,6 +31,7 @@ function App() {
         {/* <Route path="/event/:id" element={<EventDetails />} /> */}
         <Route path="/event/:id" element={<TicketDetails />} />
         <Route path="/login" element={<Login/>}/>
+        <Route path="/forgot-password" element={<ForgotPassword />}/>
         <Route path="/purchase-history" element={<PurchaseHistory />}/>
         <Route path="/admin" element={<User />}/>
         <Route path="/admin/user" element={<User />}/>
