@@ -1,5 +1,8 @@
 import React from 'react';
 import Navbar from './Navbar';
+import { EVENT_DATA } from '../utils/DUMMY_DATA';
+import { Link } from 'react-router-dom';
+import EventCard from './EventCard';
 
 function Upcoming() {
   return (
@@ -17,42 +20,12 @@ function Upcoming() {
             </div>
           </div>
 
-          <div className="row justify-content-center mt-4">
-            {[...Array(16)].map((_, index) => (
-              <div
-                key={index}
-                className="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center"
-              >
-                <a href="1">
-                  <div className="event_item wow fadeInUp" data-wow-delay=".6s">
-                    <div className="event_image">
-                      <img
-                        src={`assets/images/event${index + 1}.png`}
-                        alt={`Event ${index + 1}`}
-                      />
-                    </div>
-                    <div className="event_text">
-                      <h4>Party House Event Discount Automation</h4>
-                      <div className="event_time">
-                        <p>
-                          <img src="assets/images/calendar.svg" alt="Calendar" />{" "}
-                          <span>11 Feb, 2025, 10.00 pm - 12:00 Am</span>
-                        </p>
-                        <p>
-                          <img src="assets/images/map-pin.svg" alt="Location" />{" "}
-                          <span>
-                            Ivana Gorana Kovacica, 78000 Banja Luka, BiH
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            ))}
+          <div className="row justify-content-center mt-2 flex-wrap">
+            {EVENT_DATA?.map((event) => <EventCard event={event} />)}
           </div>
 
-          <div className="row">
+
+          {/* <div className="row">
             <div className="col-lg-12 mt-3">
               <div className="other-option text-center">
                 <a href="1" className="default-btn-border scroll-btn mr-1 text-uppercase">
@@ -60,7 +33,7 @@ function Upcoming() {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

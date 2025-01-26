@@ -66,14 +66,14 @@ function SignUp() {
         className="sub_banner_area"
         style={{ height: 'auto', paddingBottom: '100px' }}
       >
-        <div className="d-table">
+        <div className="d-table" style={{ paddingBottom: '150px' }}>
           <div className="d-tablecell">
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-lg-6 " style={{ marginTop: '150px' }}>
                   <div className="user_info">
                     <div className="user_infoo_title">
-                      <h5>Register</h5>
+                      <h5 style={{ color: '#FFF', fontSize: '30px' }}>Register</h5>
                       <span style={{ color: '#fff' }}>Let's get you on board!</span>
                     </div>
                     <form onSubmit={handleSubmit}>

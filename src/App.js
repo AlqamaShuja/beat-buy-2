@@ -11,6 +11,10 @@ import User from "./pages/admin/User";
 import Event from "./pages/admin/Event";
 import EventType from "./components/Admin/EventType";
 import EventDetails from "./components/EventDetails";
+import TicketDetails from "./components/TicketDetails";
+import PurchaseHistory from "./components/PurchaseHistory";
+import Profile from "./pages/Profile";
+import UserHolder from "./pages/UserHolder";
 function App() {
   const { isLogin, user } = useSelector(getUserFromSlice)
   return (
@@ -19,10 +23,14 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/upcoming" element={<Upcoming />} />
         <Route path="/purchase" element={<Purchase/>} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/user-holder" element={<UserHolder />} />
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/featured" element={<Featured/>}/>
-        <Route path="/event/:id" element={<EventDetails />} />
+        {/* <Route path="/event/:id" element={<EventDetails />} /> */}
+        <Route path="/event/:id" element={<TicketDetails />} />
         <Route path="/login" element={<Login/>}/>
+        <Route path="/purchase-history" element={<PurchaseHistory />}/>
         <Route path="/admin" element={<User />}/>
         <Route path="/admin/user" element={<User />}/>
         <Route path="/admin/event" element={<Event />}/>

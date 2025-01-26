@@ -1,10 +1,9 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 
 const Purchase = () => {
   return (
     <>
-      <Navbar />
+      {/* Sub Banner Area */}
       <section
         id="home"
         className="sub_banner_area"
@@ -15,7 +14,7 @@ const Purchase = () => {
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-lg-12 mb-4">
-                  <div className="banner-text text-center" style={{ marginTop: '100px', }}>
+                  <div className="banner-text text-center">
                     <span className="wow fadeInUp" data-wow-delay=".7s">
                       Ticket
                     </span>

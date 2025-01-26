@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FaEdit, FaTrash } from 'react-icons/fa';
-import { fetchUsers, addUser, updateUser, deleteUser, getUserFromSlice, addUserThunk, adminLoginThunk, addUserInviteThunk } from '../../slices/userSlice';
+import { fetchUsers, addUser, updateUser, deleteUser, getUserFromSlice, addUserThunk, adminLoginThunk, addUserInviteThunk, createOrganizerThunk } from '../../slices/userSlice';
 import { Modal, Button, Form } from 'react-bootstrap';
 import bgImage from '../../assets/bg-details.jpg';
 
@@ -55,7 +55,7 @@ function UserTable() {
             // .then(() => setShowModal(false));
         } else {
             // Add user
-            dispatch(addUserInviteThunk({ ...formData, username: formData.email }))
+            dispatch(addUserThunk({ ...formData, username: formData.name, }))
                 .unwrap()
                 .then((res) => {
                     // setShowModal(false);
@@ -75,13 +75,23 @@ function UserTable() {
     };
 
     const handleLoginAdmin = () => {
-        dispatch(adminLoginThunk({ username: 'superadmin@gmail.com', password: '12345678', })).unwrap()
-            .then(res => {
-                console.log(res, "scajncja:res:login");
-            })
-            .catch(error => {
-                console.log(error, "scajncja:error:login");
-            })
+        // dispatch(adminLoginThunk({ username: 'husnaintahir1', password: 'Grass8rock$', })).unwrap()
+        //     .then(res => {
+        //         console.log(res, "scajncja:res:login");
+        //     })
+        //     .catch(error => {
+        //         console.log(error, "scajncja:error:login");
+        //     })
+        dispatch(fetchUsers())
+        .unwrap()
+        .then((res) => {
+            console.log(res);
+            setLoading(false)
+        })
+        .catch((res) => {
+            console.log(res);
+            setLoading(false)
+        });
     }
 
     return (
@@ -97,9 +107,12 @@ function UserTable() {
             }}>
             <div className="d-flex justify-content-between align-items-center mb-4">
                 <h2 style={{ color: '#FFF' }}>User List</h2>
-                {/* <Button variant="primary" onClick={() => handleLoginAdmin()} className="text-uppercase">
+                <Button variant="primary" onClick={() => dispatch(createOrganizerThunk())} className="text-uppercase">
+                    Create Organizer
+                </Button>
+                <Button variant="primary" onClick={() => handleLoginAdmin()} className="text-uppercase">
                     Login
-                </Button> */}
+                </Button>
                 <Button variant="primary" onClick={() => handleModalToggle()} className="text-uppercase">
                     Add User
                 </Button>
@@ -121,7 +134,7 @@ function UserTable() {
                         {usersList?.map((user, index) => (
                             <tr key={user.id}>
                                 <td style={{ color: '#FFF' }}>{index + 1}</td>
-                                <td style={{ color: '#FFF' }}>{user.name}</td>
+                                <td style={{ color: '#FFF' }}>{user.username || user.name}</td>
                                 <td style={{ color: '#FFF' }}>{user.email}</td>
                                 <td>
                                     <Button
@@ -185,7 +198,7 @@ function UserTable() {
                                 />
                             </Form.Group>
                         )}
-                        <Form.Group className="mb-3">
+                        {/* <Form.Group className="mb-3">
                             <Form.Label>Organization Name</Form.Label>
                             <Form.Control
                                 type="text"
@@ -194,7 +207,7 @@ function UserTable() {
                                 onChange={handleInputChange}
                                 placeholder="Enter organization name"
                             />
-                        </Form.Group>
+                        </Form.Group> */}
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
@@ -227,3 +240,23 @@ function UserTable() {
 }
 
 export default UserTable;
+
+// {name: "test909", email: "test909@gmail.con", password: "Secret@1234", organization_name: "zininit20",…}
+// email
+// : 
+// "test909@gmail.con"
+// name
+// : 
+// "test909"
+// organization_name
+// : 
+// "zininit20"
+// password
+// : 
+// "Secret@1234"
+// role
+// : 
+// 4
+// username
+// : 
+// "test909"
