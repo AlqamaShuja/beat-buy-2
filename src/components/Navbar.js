@@ -25,7 +25,7 @@ function Navbar() {
         <nav className="navbar navbar-expand-lg navbar-light mein-navbar fixed-top">
             <div className="container">
                 <Link className="navbar-brand scroll-btn " to="/">
-                    <img src="assets/images/logo.svg" alt="" />
+                    <img width={130} src="assets/images/logo.svg" alt="" />
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@ function Navbar() {
                     <ul className="navbar-nav ml-auto mr-auto">
                         {ALL_NAV_LINKS?.map(({ id, path, title }) =>
                             <li className="nav-item">
-                                <Link className={`nav-link ${selected == path ? "active" : ""}`} to={path}>{title}</Link>
+                                <Link style={{ fontSize: '13px', fontWeight: '400' }} className={`nav-link ${selected == path ? "active" : ""}`} to={path}>{title}</Link>
                             </li>
                         )}
 

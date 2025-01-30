@@ -12,8 +12,8 @@ function Footer() {
               data-wow-delay=".4s"
             >
               <div className="wow fadeInUp d-flex flex-column align-items-center text-white gap-3" data-wow-delay=".4s">
-                <span>Copyright © 2024, BeatBuy.</span>
-                <span>All trademarks and copyrights belong to their respective owners.</span>
+                <span style={{ fontSize: '14px' }}>Copyright © 2024, BeatBuy.</span>
+                <span style={{ fontSize: '14px' }}>All trademarks and copyrights belong to their respective owners.</span>
               </div>
 
               <div className='d-flex justify-content-center align-items-center gap-3 mt-3 text-decoration-none'>
@@ -24,17 +24,17 @@ function Footer() {
                 >
                   Legal Information
                 </a>
-                <span style={{ color: "#fff" }}>|</span>
+                <span style={{ color: "#fff", fontSize: '14px' }}>|</span>
                 <a
-                  style={{ color: "#47B5F5" }}
+                  style={{ color: "#47B5F5", fontSize: '14px' }}
                   className='text-decoration-none'
                   href="https://beatbind.io/privacy"
                 >
                   Privacy Policy
                 </a>
-                <span style={{ color: "#fff" }}>|</span>
+                <span style={{ color: "#fff", fontSize: '14px' }}>|</span>
                 <a
-                  style={{ color: "#47B5F5" }}
+                  style={{ color: "#47B5F5", fontSize: '14px', }}
                   className='text-decoration-none'
                   href="https://beatbind.io/pledge"
                 >

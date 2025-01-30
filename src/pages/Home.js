@@ -7,11 +7,14 @@ import Footer from '../components/Footer'
 function Home() {
   return (
     <div data-bs-spy="scroll" data-bs-offset="70">
-     <Navbar/>
-     <Hero/>
-     <Featured/>
-     <Upcoming/>
-     <Footer/>
+      <Navbar />
+      <Hero
+        heading="Memorable Events,<br/>Exclusive NFTs!"
+        subtext="Where Memorable Events Meet Blockchain Security"
+      />
+      <Upcoming />
+      <Featured />
+      <Footer />
     </div>
   )
 }
