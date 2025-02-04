@@ -35,7 +35,7 @@ function Navbar() {
                     <ul className="navbar-nav ml-auto mr-auto">
                         {ALL_NAV_LINKS?.map(({ id, path, title }) =>
                             <li className="nav-item">
-                                <Link style={{ fontSize: '13px', fontWeight: '400' }} className={`nav-link ${selected == path ? "active" : ""}`} to={path}>{title}</Link>
+                                <Link style={{ fontSize: '14px', fontWeight: '300' }} className={`nav-link ${selected == path ? "active" : ""}`} to={path}>{title}</Link>
                             </li>
                         )}
 
@@ -44,7 +44,7 @@ function Navbar() {
                         {/* <Link to="/login" className="default-btn-border scroll-btn mr-1">
                             Sign In
                         </Link> */}
-                        <Link to="/signup" className="default-btn-border scroll-btn mr-1">
+                        <Link to="/signup" className="default-btn-border scroll-btn mr-1 text-decoration-none">
                             Sign Up
                         </Link>
                     </div>}

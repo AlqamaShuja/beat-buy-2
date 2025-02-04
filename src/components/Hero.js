@@ -7,26 +7,23 @@ function Hero({ heading, subtext }) {
         <div className="d-tablecell">
           <div className="container">
             <div className="row">
-              <div className="col-lg-12">
+              <div className="col-lg-12 d-flex justify-content-center">
                 <div className="banner-text text-center">
                   <span 
-                    className="wow fadeInUp"  
+                    className="wow fadeInUp text-16"  
                     data-wow-delay=".7s" 
-                    style={{ fontSize: '16px' }}
                   >
                     beat buy
                   </span>
                   {/* Render HTML safely using dangerouslySetInnerHTML */}
                   <h2 
-                    className="wow fadeInUp"  
-                    data-wow-delay=".8s" 
-                    style={{ fontSize: '54px' }}
+                    className="wow fadeInUp text-60"  
+                    data-wow-delay=".8s"
                     dangerouslySetInnerHTML={{ __html: heading }}
                   />
                   <p  
-                    className="wow mt-2 fadeInUp"  
-                    data-wow-delay=".9s" 
-                    style={{ fontSize: '18px' }}
+                    className="wow mt-2 fadeInUp text-18"  
+                    data-wow-delay=".9s"
                   >
                     {subtext}
                   </p>

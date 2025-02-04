@@ -1,5 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { CloseIcon, MapPinIcon } from "../utils/svg_icons";
+import Footer from "./Footer";
 
 const PurchaseHistory = () => {
     return (
@@ -11,7 +13,7 @@ const PurchaseHistory = () => {
                         <div className="container">
                             <div className="row justify-content-center">
                                 <div className="col-lg-12 mb-4">
-                                    <div className="banner-text text-center" style={{ marginTop: '100px' }}>
+                                    <div className="banner-text text-center" style={{ marginTop: '50px' }}>
                                         <span className="wow fadeInUp" data-wow-delay=".7s">
                                             Your Profile
                                         </span>
@@ -57,10 +59,12 @@ const PurchaseHistory = () => {
                                         <div className="title_ticket_section">
                                             <p>Beethovenfries & Aussstellungen Ticket</p>
                                             <span>
-                                                <img
+                                                {/* <img
                                                     src="assets/images/map-pin.svg"
                                                     alt="location"
-                                                />
+                                                /> */}
+                                                <MapPinIcon />
+                                                {" "}
                                                 Wolfgang's Place two two Homestreet, 1234, Homecity
                                             </span>
                                         </div>
@@ -71,18 +75,20 @@ const PurchaseHistory = () => {
                                             {index === 1 ? (
                                                 <a
                                                     href="#"
-                                                    className="default-btn-border btn-danger scroll-btn mr-1 text-uppercase"
+                                                    className="default-btn-border btn-danger scroll-btn mr-1 text-uppercase text-decoration-none"
                                                 >
-                                                    <img
+                                                    {/* <img
                                                         src="assets/images/x-circle.svg"
                                                         alt="canceled"
-                                                    />{" "}
+                                                    /> */}
+                                                    <CloseIcon />
+                                                    {" "}
                                                     Canceled
                                                 </a>
                                             ) : (
                                                 <a
                                                     href="#"
-                                                    className="default-btn-border scroll-btn mr-1 text-uppercase"
+                                                    className="default-btn-border scroll-btn mr-1 text-uppercase text-decoration-none"
                                                 >
                                                     + Purchased
                                                 </a>
@@ -98,7 +104,7 @@ const PurchaseHistory = () => {
                             <div className="other-option text-center">
                                 <a
                                     href="#"
-                                    className="default-btn-border scroll-btn mr-1 text-uppercase"
+                                    className="default-btn-border scroll-btn mr-1 text-uppercase text-decoration-none"
                                 >
                                     Load More Tickets
                                 </a>
@@ -107,6 +113,7 @@ const PurchaseHistory = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </>
     );
 };

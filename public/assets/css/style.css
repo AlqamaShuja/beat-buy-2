@@ -5006,6 +5006,11 @@ blockquote cite::before {
 .cat_td p {
     margin-bottom: 0;
 }
+
+.purchase_left-table-tr:hover {
+    color: #ffffff !important;
+}
+
 .cart_sections {
     background: #191354;
     border-radius: 12px;

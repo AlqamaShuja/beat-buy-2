@@ -13,9 +13,9 @@ function Upcoming() {
           <div className="row justify-content-center">
             <div className="col-lg-12">
               <div className="section-title text-center">
-                <span className="wow fadeInUp" data-wow-delay=".3s" style={{ fontSize: '16px', }}>Events</span>
-                <h2 className="wow fadeInUp" data-wow-delay=".4s" style={{ fontSize: '48px', }}>Upcoming Events</h2>
-                <p className="wow fadeInUp" data-wow-delay=".5s" style={{ fontSize: '17px', }}>Don't Miss Out: Secure Your Spot with BeatBuy's Upcoming Events</p>
+                <span className="wow fadeInUp text-16" data-wow-delay=".3s">Events</span>
+                <h2 className="wow fadeInUp text-48" data-wow-delay=".4s">Upcoming Events</h2>
+                <p className="wow fadeInUp" data-wow-delay=".5s">Don't Miss Out: Secure Your Spot with BeatBuy's Upcoming Events</p>
               </div>
             </div>
           </div>

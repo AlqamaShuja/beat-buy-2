@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const UserHolder = () => {
     return (
@@ -157,7 +158,7 @@ const UserHolder = () => {
                                             htmlFor="agree_event_terms"
                                         >
                                             I Agree to The Event Organizers{" "}
-                                            <a className="color_blue_text" href="#">
+                                            <a className="color_blue_text text-decoration-none" href="#">
                                                 Terms of Service
                                             </a>
                                         </label>
@@ -175,7 +176,7 @@ const UserHolder = () => {
                                             htmlFor="agree_beatbuy_terms"
                                         >
                                             I agree to The BeatBuy{" "}
-                                            <a className="color_blue_text" href="#">
+                                            <a className="color_blue_text text-decoration-none" href="#">
                                                 Terms of Service
                                             </a>
                                         </label>
@@ -195,6 +196,7 @@ const UserHolder = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </>
     );
 };

@@ -131,7 +131,7 @@ function SignUp() {
                           value={formData.password}
                           onChange={handleInputChange}
                         />
-                        <i
+                        {/* <i
                           className={`fa ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`}
                           style={{
                             position: 'absolute',
@@ -141,7 +141,7 @@ function SignUp() {
                             cursor: 'pointer',
                           }}
                           onClick={() => setShowPassword(!showPassword)}
-                        ></i>
+                        ></i> */}
                       </div>
                       <div className="form-group position-relative">
                         <label htmlFor="confirmPassword">Confirm Password</label>
@@ -153,7 +153,7 @@ function SignUp() {
                           value={formData.confirmPassword}
                           onChange={handleInputChange}
                         />
-                        <i
+                        {/* <i
                           className={`fa ${showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'}`}
                           style={{
                             position: 'absolute',
@@ -163,7 +163,7 @@ function SignUp() {
                             cursor: 'pointer',
                           }}
                           onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                        ></i>
+                        ></i> */}
                       </div>
 
                       <div className="form-check">

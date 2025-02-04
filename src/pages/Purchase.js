@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Purchase = () => {
   return (
@@ -54,28 +55,28 @@ const Purchase = () => {
                         "Students",
                         "Kids 12+",
                       ].map((category, index) => (
-                        <tr key={index}>
+                        <tr key={index} className="purchase_left-table-tr">
                           <td>
                             <div className="cat_td">
                               <p>Sale Ends in 4 Hours</p>
-                              <span>Erwachese / {category}</span>
+                              <span className="text-white">Erwachese / {category}</span>
                             </div>
                           </td>
                           <td>
                             <div className="cat_td">
-                              <span>Available</span>
+                              <span className="text-white">Available</span>
                             </div>
                           </td>
                           <td>
                             <div className="cat_td">
-                              <span>7.50 EUR - Standard</span>
+                              <span className="text-white">7.50 EUR - Standard</span>
                             </div>
                           </td>
                           <td>
                             <div className="other-option">
                               <a
                                 href="#"
-                                className="default-btn-border scroll-btn mr-1"
+                                className="default-btn-border scroll-btn mr-1 text-decoration-none"
                               >
                                 Add
                               </a>
@@ -105,7 +106,7 @@ const Purchase = () => {
                     <div className="other-option">
                       <a
                         href="user-holder.html"
-                        className="default-btn-border scroll-btn mr-1"
+                        className="default-btn-border scroll-btn mr-1 text-decoration-none"
                       >
                         Buy Now
                       </a>
@@ -131,6 +132,7 @@ const Purchase = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

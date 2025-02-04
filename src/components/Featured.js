@@ -16,13 +16,13 @@ function Featured() {
           <div className="row justify-content-center">
             <div className="col-lg-12">
               <div className="section-title text-center">
-                <span className="wow fadeInUp" data-wow-delay=".3s" style={{ fontSize: '16px', }}>
+                <span className="wow fadeInUp text-20" data-wow-delay=".3s">
                   Events
                 </span>
-                <h2 className="wow fadeInUp" data-wow-delay=".4s" style={{ fontSize: '48px', }}>
+                <h2 className="wow fadeInUp" data-wow-delay=".4s">
                   Featured Events
                 </h2>
-                <p className="wow fadeInUp" data-wow-delay=".5s" style={{ fontSize: '18px', }}>
+                <p className="wow fadeInUp" data-wow-delay=".5s">
                   Top Picks: BeatBuy's Must-Attend Featured Events
                 </p>
               </div>

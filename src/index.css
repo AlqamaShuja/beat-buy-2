@@ -2,3 +2,51 @@
 body {
     font-family: 'Poppins', sans-serif !important;
 }
+
+.text-12 {
+    font-size: 12px;
+}
+.text-16 {
+    font-size: 16px;
+}
+.text-18 {
+    font-size: 18px;
+}
+.text-20 {
+    font-size: 20px;
+}
+.text-22 {
+    font-size: 22px;
+}
+.text-48 {
+    font-size: 48px;
+}
+.text-60 {
+    font-size: 60px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+
+/* Event Card */
+
+.hover-scale {
+    transition: transform 0.3s ease-in-out;
+}
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.price-info-card {
+    color: #47B5F5; 
+    font-size: 12px;
+}
+
+.blue-color {
+    color: #47B5F5;
+}
+
+
+/* Event Card end */

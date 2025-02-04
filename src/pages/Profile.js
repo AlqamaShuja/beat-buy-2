@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Profile = () => {
     return (
@@ -15,7 +16,7 @@ const Profile = () => {
                         <div className="container">
                             <div className="row justify-content-center">
                                 <div className="col-lg-12 mb-4">
-                                    <div className="banner-text text-center" style={{ marginTop: '100px', }}>
+                                    <div className="banner-text text-center mt-20">
                                         <span className="wow fadeInUp" data-wow-delay=".7s">
                                             Your Profile
                                         </span>
@@ -50,7 +51,7 @@ const Profile = () => {
                         <div className="col-lg-6">
                             <div className="user_info">
                                 <div className="user_infoo_title">
-                                    <h6>Contact Information</h6>
+                                    <h6 className="text-white">Contact Information</h6>
                                 </div>
                                 <form action="" method="post" encType="multipart/form-data">
                                     <div className="form-group">
@@ -165,7 +166,7 @@ const Profile = () => {
                                             htmlFor="agree_event_terms"
                                         >
                                             I Agree to The Event Organizers{" "}
-                                            <a className="color_blue_text" href="#">
+                                            <a className="color_blue_text text-decoration-none" href="#">
                                                 Terms of Service
                                             </a>
                                         </label>
@@ -183,7 +184,7 @@ const Profile = () => {
                                             htmlFor="agree_beatbuy_terms"
                                         >
                                             I agree to The BeatBuy{" "}
-                                            <a className="color_blue_text" href="#">
+                                            <a className="color_blue_text text-decoration-none" href="#">
                                                 Terms of Service
                                             </a>
                                         </label>
@@ -204,7 +205,7 @@ const Profile = () => {
                         {/* Profile Info Section */}
                         <div className="col-lg-6">
                             <div className="profile_image_area">
-                                <h6>Your Profile Info</h6>
+                                <h6 className="text-white fw-bold">Your Profile Info</h6>
                                 <div className="pro_imgg">
                                     <img src="assets/images/profile.png" alt="Profile" />
                                 </div>
@@ -216,6 +217,7 @@ const Profile = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </>
     );
 };
