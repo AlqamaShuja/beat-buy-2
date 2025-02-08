@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const Purchase = () => {
   return (
@@ -8,15 +9,15 @@ const Purchase = () => {
       <Navbar />
       <section
         id="home"
-        className="sub_banner_area"
-        style={{ height: "518px !important" }}
+        className="sub_banner_area banner-height-518"
+        // style={{ height: "518px !important" }}
       >
         <div className="d-table">
           <div className="d-tablecell">
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-lg-12 mb-4">
-                  <div className="banner-text text-center" style={{ marginTop: '100px', }}>
+                  <div className="banner-text text-center mt-100">
                     <span className="wow fadeInUp" data-wow-delay=".7s">
                       Ticket
                     </span>
@@ -104,12 +105,13 @@ const Purchase = () => {
                   </div>
                   <div className="cart_itemm mb-3">
                     <div className="other-option">
-                      <a
-                        href="user-holder.html"
+                      <Link
+                        // href="user-holder.html"
+                        to="/user-holder"
                         className="default-btn-border scroll-btn mr-1 text-decoration-none"
                       >
                         Buy Now
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

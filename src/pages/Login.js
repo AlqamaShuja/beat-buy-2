@@ -70,9 +70,9 @@ function Login() {
                                                         onChange={(e) => setPassword(e.target.value)}
                                                     />
                                                     <small>
-                                                        <a className="color_blue_text" href="forgot.html">
+                                                        <Link className="color_blue_text underline-none" to="/forgot-password">
                                                             Forgot password?
-                                                        </a>
+                                                        </Link>
                                                     </small>
                                                 </div>
                                                 <div className="form-group text-center other-option mt-4">
@@ -86,7 +86,7 @@ function Login() {
                                                 </div>
                                                 <p className="text-center">
                                                     Don't have an account?{' '}
-                                                    <Link className="color_blue_text" to="/signup">
+                                                    <Link className="color_blue_text underline-none" to="/signup">
                                                         Register
                                                     </Link>
                                                 </p>

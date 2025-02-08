@@ -31,7 +31,7 @@ function App() {
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/featured" element={<FeaturedEventPage />}/>
         {/* <Route path="/event/:id" element={<EventDetails />} /> */}
-        <Route path="/event/:id" element={<TicketDetails />} />
+        <Route path="/event-details" element={<TicketDetails />} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/forgot-password" element={<ForgotPassword />}/>
         <Route path="/purchase-history" element={<PurchaseHistory />}/>

@@ -8,10 +8,10 @@ const EventCard = ({ event = {} }) => {
     return (
         <div
             key={event.id}
-            style={{ width: '330px' }}
-            className="col-12 col-md-6 col-lg-4 mb-6 d-flex align-items-stretch mt-3"
+            // style={{ width: '330px' }}
+            className="col-9 col-sm-8 col-md-6 col-lg-3 mb-6 d-flex align-items-stretch mt-3"
         >
-            <Link to={`/event/${event.id}`} className="w-100" style={{ textDecoration: 'none' }}>
+            <Link to={`/event-details?event=${event.id}`} className="w-100" style={{ textDecoration: 'none' }}>
                 <div
                     className="event_item wow fadeInUp d-flex flex-column bg-gray-100 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl"
                     style={{ flexGrow: 1, minHeight: '100%' }}
